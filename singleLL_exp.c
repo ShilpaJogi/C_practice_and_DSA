@@ -27,6 +27,7 @@ int insert(int ndata)
 void display(struct node *head)
 {
   struct node *p;
+  printf("head is %d\n", head->data);
     if(head == NULL)
     {
         printf("list is empty");
@@ -161,6 +162,7 @@ int insertatpos(int ndata, int pos)
     }
     return 0;
 }
+
 int deletefirstnode(int pos)
 {
     struct node *p;
@@ -172,6 +174,7 @@ int deletefirstnode(int pos)
     return 0;
     }
 }
+
 int deletebwnodes(int ndata)
 {
     struct node *p, *temp;
@@ -188,6 +191,7 @@ int deletebwnodes(int ndata)
         p = p -> link;
     }
 }
+
 int deleteatend(int ndata)
 {
     struct node *p, *temp;
@@ -215,7 +219,8 @@ int deleteatend(int ndata)
         p = p -> link;
     }
 }
-int reverselist(struct node* head)
+
+struct node *reverselist(struct node* head)
 {
     struct node *p, *next, *prev;
     prev = NULL;
@@ -228,7 +233,14 @@ int reverselist(struct node* head)
         p = next;
     }
     head = prev;
-    return 0;
+    printf("after reverse head = %d\n",head->data);
+    // p = head;
+    // while(p != NULL)
+    // {
+    //     printf("%d\n", p -> data);
+    //     p = p -> link;
+    // }
+     return head;
 }
 int main()
 {
@@ -243,8 +255,10 @@ int main()
     deletefirstnode(1);     //delete first node in list
     deletebwnodes(8);        //delete between the nodes
     deleteatend(5);         //delte at the end of the list
-    // reverselist(head);
-    display(head);      //display the nodes
+    display(head);     //display the nodes
+    reverselist(head);
+    display(head);   
+    
     count(head);         //count the number of nodes
     searching(head, 2);      //search an item in created list
 }
