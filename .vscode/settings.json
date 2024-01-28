@@ -1,6 +1,13 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "random": "c"
+        "random": "c",
+        "bit": "c",
+        "unordered_map": "c",
+        "algorithm": "c",
+        "istream": "c",
+        "limits": "c",
+        "streambuf": "c",
+        "rearranging_bubble_sll": "c"
     }
 }
